@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: rgb(0,150,136);
+    background: linear-gradient(180deg, rgba(0,150,136,1) 15%, rgba(214,219,215,1) 15%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#app{
+    border: 5px dotted black;
+    height: 90%;
+    width: 80%;
+    display: flex;
+}
+.sidebar{
+    background-color: grey;
+    width: 40%;
+    height: 100%;
+}
+.mainsection{
+    background-color: rgb(92, 92, 92);
+    width: 60%;
+    height: 100%;
+}
+.sidebar, .mainsection{
+    display: flex;
+    flex-direction: column;
+}
+.side-header, .main-header, .text-area{
+    height: 10%;
+}
+.notibar{
+    height: 13%;
+}
+.contact-section{
+    height: 78%;
+}
+.chat-section{
+    height: 80%;
+}
+.side-header, .notibar, .contact-section, .main-header, .text-area, .chat-section{
+    border: 2px solid black;
+}
