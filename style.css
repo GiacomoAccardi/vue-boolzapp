@@ -7,14 +7,12 @@ body{
     height: 100vh;
     background: rgb(0,150,136);
     background: linear-gradient(180deg, rgba(0,150,136,1) 15%, rgba(214,219,215,1) 15%);
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 #app{  
     height: 90%;
     width: 80%;
-    display: flex;
 }
 .sidebar{
     width: 40%;
@@ -25,7 +23,6 @@ body{
     height: 100%;
 }
 .sidebar, .mainsection{
-    display: flex;
     flex-direction: column;
 }
 .side-header, .main-header, .text-area{
@@ -33,10 +30,15 @@ body{
 }
 .side-header{
     border-right: 1px solid #B1B1B1;
+    padding: 5px;
+}
+.main-header{
+    padding: 5px;
 }
 .notibar{
     height: 13%;
     background-color: #8EDAFC;
+    padding: 5px 15px;
 }
 .contact-section{
     height: 78%;
@@ -46,6 +48,57 @@ body{
     height: 80%;
     background-image: url(./img/mine.jpg);
 }
+.text-area{
+    padding: 5px;
+}
 .side-header, .main-header, .text-area{
     background-color: #EAEAEA;
+}
+.user-spot{
+    border: 2px solid grey;
+    width: 70%;
+}
+.side-menu{
+    border: 2px solid grey;
+    width: 30%;
+}
+.icon-container{
+    border: 2px solid grey;
+    width: 20%;
+}
+.noti-texts{
+    border: 2px solid grey;
+    width: 80%;
+}
+.search-bar{
+    border: 2px solid grey;
+    height: 9%;
+    padding: 5px;
+}
+.contact-list{
+    border: 2px solid grey;
+    height: 91%;
+}
+.main-header .user-spot{
+    border: 2px solid grey;
+    width: 80%;
+}
+.main-header .side-menu{
+    border: 2px solid grey;
+    width: 20%;
+}
+.emoji-button, .send-button{
+    border: 2px solid grey;
+    width: 10%;
+}
+.text-field{
+    width: 80%;
+    border: 2px solid grey;
+}
+.contact-messages-spot, .user-messages-spot{
+    border: 2px solid grey;
+    width: 50%;
+}
+.d-flex{
+    display: flex;
 }
