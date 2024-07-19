@@ -11,19 +11,16 @@ body{
     justify-content: center;
     align-items: center;
 }
-#app{
-    border: 5px dotted black;
+#app{  
     height: 90%;
     width: 80%;
     display: flex;
 }
 .sidebar{
-    background-color: grey;
     width: 40%;
     height: 100%;
 }
 .mainsection{
-    background-color: rgb(92, 92, 92);
     width: 60%;
     height: 100%;
 }
@@ -34,15 +31,21 @@ body{
 .side-header, .main-header, .text-area{
     height: 10%;
 }
+.side-header{
+    border-right: 1px solid #B1B1B1;
+}
 .notibar{
     height: 13%;
+    background-color: #8EDAFC;
 }
 .contact-section{
     height: 78%;
+    background-color: white;
 }
 .chat-section{
     height: 80%;
+    background-image: url(./img/mine.jpg);
 }
-.side-header, .notibar, .contact-section, .main-header, .text-area, .chat-section{
-    border: 2px solid black;
+.side-header, .main-header, .text-area{
+    background-color: #EAEAEA;
 }
