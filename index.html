@@ -50,7 +50,7 @@
 
                 <div class="contact-list">
 
-                    <div class="contact-container d-flex" v-for="user, i in contacts">
+                    <div class="contact-container d-flex" v-for="(user, index) in contacts" @click="current_user = index" :class="current_user === index ? 'focus' : ''">
                         <div class="d-flex flex-grow">
                             <img :src="user.avatar" :alt="user.name" class="u-photo">
                             <div>
