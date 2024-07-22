@@ -88,20 +88,11 @@
 
             <div class="chat-section d-flex">
 
-                <div class="user-message bubble">
-                    <p>Hai portato a spasso il cane?</p>
-                    <p class="time-sent special-text">12:00</p>
+                <div class="bubble" v-for="message in getMessages()" :class="message.status == 'received' ? 'contact-message' : 'user-message'">
+                    <p>{{ message.message }}</p>
+                    <p class="time-sent special-text">{{ message.date.split(' ')[1].substring(0, 5) }}</p>
                 </div>
 
-                <div class="user-message bubble">
-                    <p>Ricordati di stendere i panni</p>
-                    <p class="time-sent special-text">12:04</p>
-                </div>
-
-                <div class="contact-message bubble">
-                    <p>Tutto fatto!</p>
-                    <p class="time-sent special-text">12:04</p>
-                </div>
 
             </div>
 
