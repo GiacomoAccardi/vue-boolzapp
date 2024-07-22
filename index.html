@@ -50,11 +50,11 @@
 
                 <div class="contact-list">
 
-                    <div class="contact-container d-flex">
+                    <div class="contact-container d-flex" v-for="user, i in contacts">
                         <div class="d-flex flex-grow">
-                            <img src="./img/avatar_1.jpg" alt="me" class="u-photo">
+                            <img :src="user.avatar" :alt="user.name" class="u-photo">
                             <div>
-                                <h5 class="ml-10">Mattia</h5>
+                                <h5 class="ml-10">{{user.name}}</h5>
                                 <p class="special-text ml-10 size-10">ultimo messaggio inviato</p>
                             </div>
                         </div>
