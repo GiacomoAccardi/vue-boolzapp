@@ -182,7 +182,7 @@ createApp({
             return this.contacts[this.current_user].messages;
         },
         addMessage() {
-            const new_message = {
+            let new_message = {
                 message: this.newMessage,
                 date: getFormattedDateTime(),//Utilizzo la funzione creata precedentemente per ottenere orario e data del momento in cui si invia il messaggio
                 status: 'sent'
@@ -190,6 +190,15 @@ createApp({
            //console.log(new_message)
            this.contacts[this.current_user].messages.push(new_message);
            this.newMessage = '';
+
+           setTimeout(() => {
+            let answer = {
+                message: 'Ok!', 
+                date: getFormattedDateTime(),
+                status: 'received'
+            };
+            this.contacts[this.current_user].messages.push(answer);
+        }, 1000);
         },
     }
 }).mount('#app');
