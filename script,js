@@ -191,14 +191,29 @@ createApp({
            this.contacts[this.current_user].messages.push(new_message);
            this.newMessage = '';
 
-           setTimeout(() => {
-            let answer = {
-                message: 'Ok!', 
-                date: getFormattedDateTime(),
-                status: 'received'
-            };
-            this.contacts[this.current_user].messages.push(answer);
-        }, 1000);
+            setTimeout(() => {
+                let answer = {
+                    message: 'Ok!', 
+                    date: getFormattedDateTime(),
+                    status: 'received'
+                };
+                this.contacts[this.current_user].messages.push(answer);
+            }, 1000);
         },
+        getLastMessage(user) {
+              return user.messages[user.messages.length - 1].message;
+        },
+        getLastMessageTime(user) {
+              return user.messages[user.messages.length - 1].date;
+        },
+        shorteningMessage(user) {
+            const message = this.getLastMessage(user);
+            const maxLength = 25; // Numero massimo di caratteri da visualizzare
+            if (message.length > maxLength) {
+              return message.substring(0, maxLength) + '...';
+            }
+            return message;
+        }
     }
+    
 }).mount('#app');

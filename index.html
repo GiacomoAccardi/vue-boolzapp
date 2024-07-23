@@ -55,11 +55,11 @@
                             <img :src="user.avatar" :alt="user.name" class="u-photo">
                             <div>
                                 <h5 class="ml-10">{{user.name}}</h5>
-                                <p class="special-text ml-10 size-10">ultimo messaggio inviato</p>
+                                <p class="special-text ml-10 size-10">{{ shorteningMessage(user) }}</p>
                             </div>
                         </div>
                         <div class="flex-basis">
-                            <p class="special-text size-10">12:00</p>
+                            <p class="special-text size-10">{{ getLastMessageTime(user)}}</p>
                         </div>
                     </div>
 
@@ -72,9 +72,9 @@
         <div class="mainsection d-flex">
             <div class="main-header d-flex">
                 <div class="user-spot d-flex align-cntr">
-                    <img src="./img/avatar_1.jpg" alt="me" class="u-photo">
+                    <img :src="contacts[current_user].avatar" alt="me" class="u-photo">
                     <div>
-                        <h5 class="ml-10">Michele</h5>
+                        <h5 class="ml-10">{{contacts[current_user].name}}</h5>
                         <p class="special-text ml-10 size-10">ultimo accesso oggi alle 12:00</p>
                     </div>
                 </div>
