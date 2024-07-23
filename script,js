@@ -12,6 +12,7 @@ createApp({
         return {
             current_user: 0,
             newMessage: null,
+            searchQuery: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -177,6 +178,13 @@ createApp({
             ]
         }
     },
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter(user => 
+                user.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+            );
+        }
+    },
     methods: {
         getMessages() {
             return this.contacts[this.current_user].messages;
@@ -208,7 +216,7 @@ createApp({
         },
         shorteningMessage(user) {
             const message = this.getLastMessage(user);
-            const maxLength = 25; // Numero massimo di caratteri da visualizzare
+            const maxLength = 25; 
             if (message.length > maxLength) {
               return message.substring(0, maxLength) + '...';
             }

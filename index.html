@@ -43,14 +43,15 @@
             </div>
 
             <div class="contact-section">
+
                 <div class="search-bar">
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" v-model="searchQuery" placeholder="Cerca o inizia una nuova chat">
                     <i class="fa-solid fa-magnifying-glass menu-icons size-10"></i>
                 </div>
 
                 <div class="contact-list">
 
-                    <div class="contact-container d-flex" v-for="(user, index) in contacts" @click="current_user = index" :class="current_user === index ? 'focus' : ''">
+                    <div class="contact-container d-flex" v-for="(user, index) in filteredContacts" @click="current_user = index" :class="current_user === index ? 'focus' : ''">
                         <div class="d-flex flex-grow">
                             <img :src="user.avatar" :alt="user.name" class="u-photo">
                             <div>
