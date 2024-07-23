@@ -1,9 +1,17 @@
 const { createApp } = Vue;
+//creo una funzione per ottenere la data e l'orario nel formato che mi interessa
+function getFormattedDateTime() {
+    const now = new Date();
+    const date = now.toLocaleDateString('it-IT'); // Formato italiano: giorno/mese/anno
+    const time = now.toLocaleTimeString('it-IT', { hour12: false }); // Formato 24 ore: ore:minuti:secondi
+    return `${date} ${time}`;
+}
 
 createApp({
     data() {
         return {
             current_user: 0,
+            newMessage: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -172,6 +180,16 @@ createApp({
     methods: {
         getMessages() {
             return this.contacts[this.current_user].messages;
+        },
+        addMessage() {
+            const new_message = {
+                message: this.newMessage,
+                date: getFormattedDateTime(),//Utilizzo la funzione creata precedentemente per ottenere orario e data del momento in cui si invia il messaggio
+                status: 'sent'
+            }
+           //console.log(new_message)
+           this.contacts[this.current_user].messages.push(new_message);
+           this.newMessage = '';
         },
     }
 }).mount('#app');

@@ -74,7 +74,7 @@
                 <div class="user-spot d-flex align-cntr">
                     <img src="./img/avatar_1.jpg" alt="me" class="u-photo">
                     <div>
-                        <h5 class="ml-10">Mattia</h5>
+                        <h5 class="ml-10"></h5>
                         <p class="special-text ml-10 size-10">ultimo accesso oggi alle 12:00</p>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="text-field">
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" @keyup.enter="addMessage" v-model="newMessage" placeholder="Scrivi un messaggio">
                 </div>
 
                 <div class="send-button d-flex j-center align-cntr">
